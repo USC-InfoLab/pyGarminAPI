@@ -2,6 +2,9 @@
 
 name: CI
 
+permissions:
+  contents: write
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -32,9 +35,7 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        sudo apt install pandoc
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
     - name: Install and run docsify
       run: |
         npm i docsify-cli -g
@@ -42,7 +43,6 @@ jobs:
 
     - name: Build sphinx documentation
       run: |
-        apt-get install python3-sphinx
         pip install sphinx-rtd-theme
         sphinx-apidoc -o docs .
         cd docs
@@ -51,3 +51,8 @@ jobs:
         cp ./docs/get_started/index.html ./docs/_build/html/_static/get_started.html
         cp ./docs/get_started/.nojekyll ./docs/_build/html/_static/.nojekyll
         cp ./docs/get_started/README.md ./docs/_build/html/_static/README.md
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: docs/_build/html # The folder the action should deploy.
