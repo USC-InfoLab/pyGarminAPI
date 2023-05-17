@@ -3,7 +3,15 @@ pyGarminAPI is a Python library that provides a convenient way to interact with 
 
 The Garmin Pull API allows you to retrieve a wide range of data, including activities such as running, cycling, and swimming, as well as health data like heart rate and step count. By utilizing pyGarminAPI, you can effortlessly integrate Garmin data into your Python applications or scripts.
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
+pyGarminAPI provides the following conveniences:
 - Seamless authentication process with your Garmin API credentials.
 - Fetch detailed information about activities, including activity type, distance, and duration.
 - Retrieve health data such as heart rate and step count.
