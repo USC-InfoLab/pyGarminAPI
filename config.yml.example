@@ -1,0 +1,15 @@
+database:
+  db_host: YOUR_DATA_BASE_HOST_NUMBER_OR_NAME
+  db_port: YOUR_DATA_BASE_PORT
+  db_user: YOUR_DATA_BASE_USER_NAME
+  db_pass: YOUR_DATA_BASE_PASSWORD
+  db_name: YOUR_DATA_BASE_NAME
+  db_auth_table: YOUR_GARMIN_AUTHORIZATION_TABLE
+  db_user_table: YOUR_GARMIN_USER_TABLE
+
+garmin:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  api_base_url: https://apis.garmin.com
+
+
