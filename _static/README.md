@@ -16,7 +16,7 @@ The Garmin Pull API allows you to retrieve a wide range of data, including activ
 
 Before using pyGarminAPI, ensure you have the following prerequisites:
 
-- Python 3.6 or higher installed on your system.
+- Python 3.8 or higher installed on your system.
 - Access to the Garmin API with valid API credentials.
 - Database setup with the required tables:
   - A `GARMIN_USER` table with at least `user_id` and `email` columns for each user.
