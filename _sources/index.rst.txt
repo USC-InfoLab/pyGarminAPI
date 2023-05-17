@@ -11,7 +11,6 @@ Welcome to pyGarminAPI Documentation's documentation!
    :caption: Contents:
 
    getting_started
-   modules
 
 
 Indices and tables
