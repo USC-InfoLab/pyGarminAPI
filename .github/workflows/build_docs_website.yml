@@ -29,30 +29,30 @@ jobs:
         with:
           node-version: 18
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-    - name: Install and run docsify
-      run: |
-        npm i docsify-cli -g
-        echo y | docsify init ./docs/get_started
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+      - name: Install and run docsify
+        run: |
+          npm i docsify-cli -g
+          echo y | docsify init ./docs/get_started
 
-    - name: Build sphinx documentation
-      run: |
-        pip install sphinx-rtd-theme
-        sphinx-apidoc -o docs .
-        cd docs
-        sphinx-build -b html . _build/html
-        cd ..
-        cp ./docs/get_started/index.html ./docs/_build/html/_static/get_started.html
-        cp ./docs/get_started/.nojekyll ./docs/_build/html/_static/.nojekyll
-        cp ./docs/get_started/README.md ./docs/_build/html/_static/README.md
+      - name: Build sphinx documentation
+        run: |
+          pip install sphinx-rtd-theme
+          sphinx-apidoc -o docs .
+          cd docs
+          sphinx-build -b html . _build/html
+          cd ..
+          cp ./docs/get_started/index.html ./docs/_build/html/_static/get_started.html
+          cp ./docs/get_started/.nojekyll ./docs/_build/html/_static/.nojekyll
+          cp ./docs/get_started/README.md ./docs/_build/html/_static/README.md
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: docs/_build/html # The folder the action should deploy.
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/_build/html # The folder the action should deploy.
