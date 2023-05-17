@@ -13,8 +13,13 @@ import pytz
 import oauthlib.oauth1
 import requests
 
+import sys
+import os
 
-config_file = './config.yml'
+sys.path.insert(0, os.path.abspath('..'))
+
+
+config_file = '../config.yml'
 
 def load_config(config_file) -> dict:
     """Read the YAML config file
