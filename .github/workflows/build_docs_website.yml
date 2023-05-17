@@ -39,7 +39,7 @@ jobs:
     - name: Install and run docsify
       run: |
         npm i docsify-cli -g
-        docsify init ./docs/get_started
+        echo y | docsify init ./docs/get_started
 
     - name: Build sphinx documentation
       run: |
