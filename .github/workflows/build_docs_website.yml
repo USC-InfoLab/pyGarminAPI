@@ -26,28 +26,28 @@ jobs:
         with:
           node-version: 18
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        sudo apt install pandoc
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Install and run docsify
-      run: |
-        npm i docsify-cli -g
-        docsify init ./docs/get_started
-        
-    - name: Build sphinx documentation
-      run: |
-        apt-get install python3-sphinx
-        pip install sphinx-rtd-theme
-        sphinx-apidoc -o docs .
-        cd docs
-        sphinx-build -b html . _build/html
-        cd ..
-        cp ./docs/get_started/index.html ./docs/_build/html/_static/get_started.html
-        cp ./docs/get_started/.nojekyll ./docs/_build/html/_static/.nojekyll
-        cp ./docs/get_started/README.md ./docs/_build/html/_static/README.md
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          sudo apt install pandoc
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install and run docsify
+        run: |
+          npm i docsify-cli -g
+          docsify init ./docs/get_started
+
+      - name: Build sphinx documentation
+        run: |
+          apt-get install python3-sphinx
+          pip install sphinx-rtd-theme
+          sphinx-apidoc -o docs .
+          cd docs
+          sphinx-build -b html . _build/html
+          cd ..
+          cp ./docs/get_started/index.html ./docs/_build/html/_static/get_started.html
+          cp ./docs/get_started/.nojekyll ./docs/_build/html/_static/.nojekyll
+          cp ./docs/get_started/README.md ./docs/_build/html/_static/README.md
