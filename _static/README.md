@@ -15,7 +15,7 @@ The Garmin Pull API allows you to retrieve a wide range of data, including activ
 
 ## Documentation
 
-For detailed instructions on how to use the functions and modules provided by pyGarminAPI, please refer to the [pyGarminAPI Documentation](https://nih-w4h.github.io/pyGarminAPI/).
+For detailed instructions on how to use the functions and modules provided by pyGarminAPI, please refer to the [pyGarminAPI Documentation](https://usc-infolab.github.io/pyGarminAPI/).
 
 ## Prerequisites
 
